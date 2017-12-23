@@ -14,10 +14,19 @@ class HomePage extends React.Component {
 
     this.state = {imgsProp: imgsProp}
 
-
     this.onTransactionEnd = this.onTransactionEnd.bind(this)
     this.handleCallback = this.handleCallback.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.handleClickNextBtn = this.handleClickNextBtn.bind(this)
+    this.handleClickPrevBtn = this.handleClickPrevBtn.bind(this)
+  }
+
+  handleClickNextBtn () {
+    this.swipe.next()
+  }
+
+  handleClickPrevBtn () {
+    this.swipe.prev()
   }
 
   componentDidMount () {
@@ -49,110 +58,34 @@ class HomePage extends React.Component {
       )
     })
 
-    console.log(swipeItems[this.props.start].SwipeImg);
+    console.log(swipeItems[this.props.start].SwipeImg)
 
     return (
-      <Swipe
-        className='custom-swipe-container-class'
-        ref={o => this.swipe = o}
-        startSlide={this.props.start}
-        speed={300}
-        auto={0}
-        draggable={true}
-        continuous={false}
-        autoRestart={false}
-        disableScroll={false}
-        stopPropagation={false}
-        callback={this.handleCallback}
-        transitionEnd={this.onTransactionEnd}>
+      <div>
+        <button className='prevBtn' onClick={this.handleClickPrevBtn}>Prev</button>
+        <button className='nextBtn' onClick={this.handleClickNextBtn}>Next</button>
+        <Swipe
+          className='custom-swipe-container-class'
+          ref={o => this.swipe = o}
+          startSlide={this.props.start}
+          speed={300}
+          auto={0}
+          draggable={true}
+          continuous={false}
+          autoRestart={false}
+          disableScroll={false}
+          stopPropagation={false}
+          callback={this.handleCallback}
+          transitionEnd={this.onTransactionEnd}>
 
-        {swipeItems}
-      </Swipe>
+          {swipeItems}
+        </Swipe>
+      </div>
     )
   }
 }
 
 const IMAGES = [
-  {src: './img/0.jpg'},
-  {src: './img/1.jpg'},
-  {src: './img/2.jpg'},
-  {src: './img/3.jpg'},
-  {src: './img/4.jpg'},
-  {src: './img/5.jpg'},
-  {src: './img/6.jpg'},
-  {src: './img/7.jpg'},
-  {src: './img/8.jpg'},
-  {src: './img/9.jpg'},
-  {src: './img/10.jpg'},
-  {src: './img/11.jpg'},
-  {src: './img/12.jpg'},
-  {src: './img/13.jpg'},
-  {src: './img/14.jpg'},
-  {src: './img/15.jpg'},
-  {src: './img/16.jpg'},
-  {src: './img/17.jpg'},
-  {src: './img/18.jpg'},
-  {src: './img/19.jpg'},
-  {src: './img/0.jpg'},
-  {src: './img/1.jpg'},
-  {src: './img/2.jpg'},
-  {src: './img/3.jpg'},
-  {src: './img/4.jpg'},
-  {src: './img/5.jpg'},
-  {src: './img/6.jpg'},
-  {src: './img/7.jpg'},
-  {src: './img/8.jpg'},
-  {src: './img/9.jpg'},
-  {src: './img/10.jpg'},
-  {src: './img/11.jpg'},
-  {src: './img/12.jpg'},
-  {src: './img/13.jpg'},
-  {src: './img/14.jpg'},
-  {src: './img/15.jpg'},
-  {src: './img/16.jpg'},
-  {src: './img/17.jpg'},
-  {src: './img/18.jpg'},
-  {src: './img/19.jpg'},
-  {src: './img/0.jpg'},
-  {src: './img/1.jpg'},
-  {src: './img/2.jpg'},
-  {src: './img/3.jpg'},
-  {src: './img/4.jpg'},
-  {src: './img/5.jpg'},
-  {src: './img/6.jpg'},
-  {src: './img/7.jpg'},
-  {src: './img/8.jpg'},
-  {src: './img/9.jpg'},
-  {src: './img/10.jpg'},
-  {src: './img/11.jpg'},
-  {src: './img/12.jpg'},
-  {src: './img/13.jpg'},
-  {src: './img/14.jpg'},
-  {src: './img/15.jpg'},
-  {src: './img/16.jpg'},
-  {src: './img/17.jpg'},
-  {src: './img/18.jpg'},
-  {src: './img/19.jpg'},
-  {src: './img/0.jpg'},
-  {src: './img/1.jpg'},
-  {src: './img/2.jpg'},
-  {src: './img/3.jpg'},
-  {src: './img/4.jpg'},
-  {src: './img/5.jpg'},
-  {src: './img/6.jpg'},
-  {src: './img/7.jpg'},
-  {src: './img/8.jpg'},
-  {src: './img/9.jpg'},
-  {src: './img/10.jpg'},
-  {src: './img/11.jpg'},
-  {src: './img/12.jpg'},
-  {src: './img/13.jpg'},
-  {src: './img/14.jpg'},
-  {src: './img/15.jpg'},
-  {src: './img/16.jpg'},
-  {src: './img/17.jpg'},
-  {src: './img/18.jpg'},
-  {src: './img/19.jpg'},
   {src: './img/0.jpg'},
   {src: './img/1.jpg'},
   {src: './img/2.jpg'},
