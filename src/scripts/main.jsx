@@ -1,5 +1,5 @@
-import App from './components/App.jsx'
-import VisibleUserList from './components/VisibleUserList.jsx'
+import App from './components/App'
+import UserList from './components/UserList'
 import {Provider} from 'react-redux'
 import store from './store'
 import {actCreate} from './store/actions'
@@ -13,7 +13,7 @@ store.dispatch(actCreate.removeUser(1))
 
 ReactDOM.render(
   <Provider store={store}>
-    <VisibleUserList />
+    <App />
   </Provider>,
   document.getElementById('root'))
 

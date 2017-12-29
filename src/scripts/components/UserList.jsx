@@ -1,6 +1,7 @@
-import User from './User.jsx'
+import User from './User'
+import {connect} from 'react-redux'
 
-export default ({users}) => {
+const UserList = ({users}) => {
   let lis = users.map((user, i) => (<User key={i} {...user} />))
 
   return (
@@ -9,3 +10,9 @@ export default ({users}) => {
     </ul>
   )
 }
+
+const mapStateToPrps = (state) => {
+  return {users: state.users}
+}
+
+export default connect(mapStateToPrps)(UserList)

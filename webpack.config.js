@@ -14,6 +14,10 @@ module.exports = {
     filename: '[name].js'
   },
 
+  resolve: {
+    extensions: ['.jsx', '.js', '.json']
+  },
+
   module: {
     rules: [
       { test: /\.jsx$|\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
