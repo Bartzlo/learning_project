@@ -34,5 +34,8 @@
     "webpack-stream": "^4.0.0"
   },
   "description": "",
-  "dependencies": {}
+  "dependencies": {
+    "mysql2": "^1.5.2",
+    "sequelize": "^4.34.0"
+  }
 }
